@@ -1,0 +1,48 @@
+# Secrets — never commit
+.env
+.env.local
+.env.production
+
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local databases
+*.db
+*.sqlite3
+
+# Vector stores
+.chroma/
+chroma/
+qdrant_storage/
+
+# Next.js / Node
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+
+# Logs
+*.log
+uvicorn_crud.log
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Alembic (keep versions, not pyc)
+alembic/versions/__pycache__/

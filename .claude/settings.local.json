@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --no-install tsc --noEmit)",
+      "Bash(npx --no-install tsc --noEmit --ignoreDeprecations 6.0)",
+      "Bash(Test-Path \"D:\\\\Top Project\\\\Rag Project\\\\AI power MultitableChatbot\\\\README.md\")"
+    ]
+  }
+}

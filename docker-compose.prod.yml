@@ -1,0 +1,42 @@
+# Production override — use alongside docker-compose.yml:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Prerequisites:
+#   1. Set all variables in .env (copy from .env.example)
+#   2. Place your SSL cert at ./nginx/certs/cert.pem and key.pem
+#      OR use Caddy / Traefik for automatic Let's Encrypt
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - api
+      - frontend
+    restart: unless-stopped
+
+  api:
+    restart: unless-stopped
+    environment:
+      APP_ENV: production
+    # Remove direct port exposure — traffic goes through nginx only
+    ports: []
+
+  frontend:
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: https://yourdomain.com/api
+    ports: []
+
+  app-db:
+    restart: unless-stopped
+
+  business-db:
+    restart: unless-stopped
+
+  qdrant:
+    restart: unless-stopped
