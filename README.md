@@ -634,12 +634,12 @@ The initial `allow_origins=["*"]` was fine for local development. For production
 
 ## About the Author
 
-**Md. Asadozzaman**
+**Md. Asadozzaman(Faysal)**
 Full-stack developer focused on AI-integrated applications, data tooling, and clean system design.
 
 I built this to solve a real problem I kept seeing: valuable business data locked behind a SQL skill barrier. If you're working on something in this space or want to talk about the implementation, reach out.
 
-- 📧 faysalcomputervision@gmail.com
+- 📧 asadozzaman278061@gmail.com
 - 🐙 [github.com/asadozzaman](https://github.com/asadozzaman)
 
 ---
